@@ -8,7 +8,7 @@ see [requirements](requirements.txt) file for details
 
 ## Authors
 
-* **Nazarii Nyzhnyk Thompson** - *Initial work* - [nazariinyzhnyk](https://github.com/nazariinyzhnyk)
+* **Nazarii Nyzhnyk** - *Initial work* - [nazariinyzhnyk](https://github.com/nazariinyzhnyk)
 
 ## License
 
