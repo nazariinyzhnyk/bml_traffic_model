@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import warnings
 import argparse
 from matplotlib.colors import ListedColormap
+from moves import car_moves
 warnings.filterwarnings("ignore")
 cmap = ListedColormap(['white', '#95d0fc', '#ff474c'])
 
@@ -11,6 +12,7 @@ parser = argparse.ArgumentParser(description='Initial conditions: ')
 parser.add_argument("-f", "--field", help="field size", default='7')
 parser.add_argument("-b", "--blues", help="blue cars ratio", default='0.3333')
 parser.add_argument("-r", "--reds",  help="red cars ratio", default='0.3333')
+parser.add_argument("-i", "--iterations",  help="num of iterations", default='2')
 args = parser.parse_args()
 
 
@@ -24,17 +26,23 @@ def get_field(field_size, class_relation):
 
     field_to_return = np.random.rand(field_size, field_size)
     field_to_return = np.where(field_to_return <= class_relation[0], 1,
-                     np.where(field_to_return > sum(class_relation), 0, 2))
+                      np.where(field_to_return > sum(class_relation), 0, 2))
     return field_to_return
+
+
+def plot_matrix(matrix, title_text, pause_time=1):
+    plt.clf()
+    plt.matshow(matrix, fignum=1, cmap=cmap)
+    plt.title(title_text)
+    plt.show()
+    plt.pause(pause_time)
 
 
 if __name__ == '__main__':
     plt.ion()
     plt.figure()
-    for i in range(2):
-        plt.clf()
-        print('iteration = ' + str(i))
-        field = get_field(int(args.field), [float(args.blues), float(args.reds)])
-        plt.matshow(field, fignum=1, cmap=cmap)
-        plt.show()
-        plt.pause(1)
+    field = get_field(int(args.field), [float(args.blues), float(args.reds)])
+    plot_matrix(field, 'Initial matrix')
+    for i in range(int(args.iterations)):
+        field = car_moves(field)
+        plot_matrix(field, 'Iteration = ' + str(i))
