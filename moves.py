@@ -1,7 +1,8 @@
 def move_right(field, move_value=2):
-    field_len = len(field)
-    for i in range(field_len):
-        for j in range(field_len - 2, -1, -1):
+    rownum = len(field)
+    colnum = len(field[1])
+    for i in range(rownum):
+        for j in range(colnum - 2, -1, -1):
             if field[i][j] == move_value and field[i][j + 1] == 0:
                 field[i][j + 1] = field[i][j]
                 field[i][j] = 0
@@ -9,9 +10,10 @@ def move_right(field, move_value=2):
 
 
 def move_down(field, move_value=1):
-    field_len = len(field)
-    for i in range(field_len - 2, -1, -1):
-        for j in range(field_len):
+    rownum = len(field)
+    colnum = len(field[1])
+    for i in range(rownum - 2, -1, -1):
+        for j in range(colnum):
             if field[i][j] == move_value and field[i + 1][j] == 0:
                 field[i + 1][j] = field[i][j]
                 field[i][j] = 0

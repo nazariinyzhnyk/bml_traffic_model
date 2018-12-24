@@ -6,6 +6,12 @@ Self-organizing cellular automaton traffic flow model. [wiki article](https://en
 
 see [requirements](requirements.txt) file for details
 
+## TODOs
+
+- add emergence of new cells when reaching boundary (param emerge (F, random, same)).
+- add possibility to move left / up.
+- add possibility to init various direction cars.
+
 ## Authors
 
 * **Nazarii Nyzhnyk** - *Initial work* - [nazariinyzhnyk](https://github.com/nazariinyzhnyk)
