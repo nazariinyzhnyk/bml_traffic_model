@@ -43,6 +43,14 @@ if __name__ == '__main__':
     plt.figure()
     field = get_field(int(args.field), [float(args.blues), float(args.reds)])
     plot_matrix(field, 'Initial matrix')
+    prev_iter_field = field.copy()
     for i in range(int(args.iterations)):
+        title_iter_num = str(i + 1)
         field = car_moves(field)
-        plot_matrix(field, 'Iteration = ' + str(i))
+        if np.array_equal(np.array(field), np.array(prev_iter_field)):
+            print('System stucked after ' + title_iter_num + ' iterations.')
+            plot_matrix(field, 'Final iteration = ' + title_iter_num, pause_time=5)
+            break
+        else:
+            plot_matrix(field, 'Iteration = ' + title_iter_num)
+            prev_iter_field = field.copy()
