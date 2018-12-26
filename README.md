@@ -8,7 +8,7 @@ see [requirements](requirements.txt) file for details
 
 ## TODOs
 
-- add emergence of new cells when reaching boundary (param emerge (F, random, same)).
+- add emergence of new cells when reaching boundary (param emerge (none, random, same)).
 - add possibility to move left / up.
 - add possibility to init various direction cars.
 

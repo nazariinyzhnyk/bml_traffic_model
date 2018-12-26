@@ -1,6 +1,6 @@
 def move_right(field, emergence='none', move_value=2):  # todo: add comments
     rownum = len(field)
-    colnum = len(field[1])
+    colnum = len(field[0])
     for i in range(rownum):
         for j in range(colnum - 2, -1, -1):
             if field[i][j] == move_value and field[i][j + 1] == 0:
@@ -9,10 +9,17 @@ def move_right(field, emergence='none', move_value=2):  # todo: add comments
     return field
 
 
-def move_down(field, emergence='none', move_value=1):  # todo: add comments
+def move_down(field, emergence='none', move_value=1):  # todo: add comments, write emergence logic
     rownum = len(field)
-    colnum = len(field[1])
-    for i in range(rownum - 2, -1, -1):
+    colnum = len(field[0])
+    start_row = 2
+    if emergence != 'none':
+        start_row = 1
+        idx_replacable = [el for el, x in enumerate(field[0]) if x == 0]
+        idx_to_replace = [el for el, x in enumerate(field[rownum - 1]) if x == 1]
+        replacable = list(set(idx_to_replace).intersection(set(idx_replacable)))  # fixme: circular filling
+        field[0] = [el if x not in replacable else 1 for el, x in enumerate(field[0])]  # check me
+    for i in range(rownum - start_row, -1, -1):
         for j in range(colnum):
             if field[i][j] == move_value and field[i + 1][j] == 0:
                 field[i + 1][j] = field[i][j]
