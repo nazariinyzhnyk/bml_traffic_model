@@ -14,12 +14,12 @@ def move_down(field, emergence='none', move_value=1):  # todo: add comments, wri
     colnum = len(field[0])
     start_row = 2
     if emergence != 'none':
-        start_row = 1
         idx_replacable = [el for el, x in enumerate(field[0]) if x == 0]
         idx_to_replace = [el for el, x in enumerate(field[rownum - 1]) if x == 1]
         replacable = list(set(idx_to_replace).intersection(set(idx_replacable)))  # fixme: circular filling
-        field[0] = [el if x not in replacable else 1 for el, x in enumerate(field[0])]  # check me
-    for i in range(rownum - start_row, -1, -1):
+        field[0] = [el if x not in replacable else 1 for x, el in enumerate(field[0])]  # check me
+        field[rownum - 1] = [el if x not in replacable else 0 for x, el in enumerate(field[rownum-1])]
+    for i in range(rownum - 2, -1, -1):
         for j in range(colnum):
             if field[i][j] == move_value and field[i + 1][j] == 0:
                 field[i + 1][j] = field[i][j]
