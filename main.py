@@ -11,11 +11,16 @@ cmap = ListedColormap(['white', '#95d0fc', '#ff474c'])
 parser = argparse.ArgumentParser(description='Initial conditions: ')
 parser.add_argument("-fcols", "--fieldcols", help="field size cols", default='9')
 parser.add_argument("-frows", "--fieldrows", help="field size rows", default='9')
-parser.add_argument("-b", "--blues", help="blue cars ratio", default='0.3333')  # todo: add param to pass only density
+parser.add_argument("-d", "--density", help="density", default='33')
+parser.add_argument("-b", "--blues", help="blue cars ratio", default='0.3333')
 parser.add_argument("-r", "--reds",  help="red cars ratio", default='0.3333')
 parser.add_argument("-i", "--iterations",  help="num of iterations", default='2')
 parser.add_argument("-s", "--sleep",  help="sleep time", default='0.1')
 args = parser.parse_args()
+
+if float(args.density) != 0:
+    args.blues = '0.' + args.density
+    args.reds = '0.' + args.density
 
 
 def get_field(field_size_cols, field_size_rows, class_relation):
