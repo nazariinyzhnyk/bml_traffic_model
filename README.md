@@ -8,7 +8,8 @@ see [requirements](requirements.txt) file for details
 
 ## TODOs
 
-- add experiments with different parama to readme file
+- add possibility to save init and final matrix
+- add experiments with different params to readme file
 - add possibility to move left / up.
 - add possibility to init various direction cars.
 - add comments to explain program logic
