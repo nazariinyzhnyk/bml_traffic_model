@@ -1,6 +1,14 @@
 # Biham–Middleton–Levine traffic model
 
-Self-organizing cellular automaton traffic flow model ([wiki article](https://en.wikipedia.org/wiki/Biham–Middleton–Levine_traffic_model)).
+Self-organizing cellular automaton traffic flow model
+ ([wiki article](https://en.wikipedia.org/wiki/Biham–Middleton–Levine_traffic_model)). <br />
+
+###Simple example:
+Initial matrix:<br />
+![alt text](results/2018-12-31 14/11/11.png)
+
+Resulting matrix:<br />
+![alt text](results/2018-12-31 14/11/19.png)
 
 ### Requirements
 
@@ -18,21 +26,20 @@ Basic examples are shown in [Jupyter Notebook](examples.ipynb).
 Running simulations in terminal:
 
 ```
-python main.py -fcols 50 -frows 50 -d 40 -i 100
+python main.py -fcols 50 -frows 50 -d 40 -i 100 -p 1
 ```
 
 where:<br />
 -fcols: number of fields' columns<br />
 -frows: number of fields' rows<br />
 -d: density<br />
--i: number of iterations
+-i: number of iterations<br />
+-p: save plot flag
 
 ## TODOs
 
-- add possibility to save init and final matrix
-- add experiments with different params to readme file
-- add possibility to init various direction cars (+ to move left / up).
-- add comments to explain program logic
+- add possibility to init various direction cars (+ to move left / up);
+- pass args to plot_matrix function to  save plots with normal names.
 
 ## Authors
 
