@@ -5,10 +5,10 @@ Self-organizing cellular automaton traffic flow model
 
 ### Simple example:
 Initial matrix:<br />
-![picture](results/2018-12-31 14:11:11.png)
+![picture](results/before.png)
 
 Resulting matrix:<br />
-![picture](results/2018-12-31 14:11:19.png)
+![picture](results/after.png)
 
 ### Requirements
 
