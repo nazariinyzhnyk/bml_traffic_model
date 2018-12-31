@@ -1,3 +1,39 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import ListedColormap
+cmap = ListedColormap(['white', '#95d0fc', '#ff474c'])
+
+
+def get_field(field_size_cols, field_size_rows, class_relation):
+
+    """
+    Function to create field of given shape with randomly filled values of classes.
+    :param field_size_cols: # of matrix columns
+    :param field_size_rows: # of matrix rows
+    :param class_relation: relation of reds and blues (0:1)
+    :return: field filled with random values white:0, blue:1, red:2
+    """
+
+    field_to_return = np.random.rand(field_size_cols, field_size_rows)
+    field_to_return = np.where(field_to_return <= class_relation[0], 1,
+                        np.where(field_to_return > sum(class_relation), 0, 2))
+    return field_to_return
+
+
+def plot_matrix(matrix, title_text, pause_time=1.0):
+    """
+    Function to plot matrix with colorizing different classes.
+    :param matrix: matrix to plot
+    :param title_text: plot title text
+    :param pause_time: time (in secs) to sleep after each plot
+    """
+    plt.clf()
+    plt.matshow(matrix, fignum=1, cmap=cmap)
+    plt.title(title_text)
+    plt.show()
+    plt.pause(pause_time)
+
+
 def move_loop(arr, range_from, range_to, move_value=2):  # todo: add comments
     for i in range(range_from, range_to, -1):
         if arr[i] == move_value and arr[i + 1] == 0:

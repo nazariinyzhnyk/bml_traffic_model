@@ -1,6 +1,6 @@
 # Biham–Middleton–Levine traffic model
 
-Self-organizing cellular automaton traffic flow model [wiki article](https://en.wikipedia.org/wiki/Biham–Middleton–Levine_traffic_model).
+Self-organizing cellular automaton traffic flow model ([wiki article](https://en.wikipedia.org/wiki/Biham–Middleton–Levine_traffic_model)).
 
 ### Requirements
 
@@ -21,7 +21,7 @@ Running simulations in terminal:
 python main.py -fcols 50 -frows 50 -d 40 -i 100
 ```
 
-where:
+where:<br />
 -fcols: number of fields' columns<br />
 -frows: number of fields' rows<br />
 -d: density<br />
