@@ -4,8 +4,8 @@ Self-organizing cellular automaton traffic flow model [wiki article](https://en.
 
 ### Requirements
 
-Project was developed in Python 3.6 using basic libraries.
-See [requirements](requirements.txt) file for details.
+Project was developed in Python 3.6 using basic libraries.<br />
+See [requirements](requirements.txt) file for details.<br />
 To install all the libraries with preinstalled Python and pip cd to project's folder and run command in Terminal:
 
 ```
@@ -22,9 +22,9 @@ python main.py -fcols 50 -frows 50 -d 40 -i 100
 ```
 
 where:
--fcols: number of fields' columns
--frows: number of fields' rows
--d: density
+-fcols: number of fields' columns<br />
+-frows: number of fields' rows<br />
+-d: density<br />
 -i: number of iterations
 
 ## TODOs
