@@ -3,12 +3,12 @@
 Self-organizing cellular automaton traffic flow model
  ([wiki article](https://en.wikipedia.org/wiki/Biham–Middleton–Levine_traffic_model)). <br />
 
-###Simple example:
+### Simple example:
 Initial matrix:<br />
-![alt text](results/2018-12-31 14/11/11.png)
+![alt text](results/2018-12-31 14:11:11.png)
 
 Resulting matrix:<br />
-![alt text](results/2018-12-31 14/11/19.png)
+![alt text](results/2018-12-31 14:11:19.png)
 
 ### Requirements
 
